@@ -1,0 +1,547 @@
+{
+	"info": {
+		"_postman_id": "dde71cc9-9818-4ae1-acbe-c8ef64dbe528",
+		"name": "Servlets",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21489601"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "IncreaseYaz",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{Server}}/Admin-Increase-Yaz-Servlet",
+							"host": [
+								"{{Server}}"
+							],
+							"path": [
+								"Admin-Increase-Yaz-Servlet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ActivateRewind",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{Server}}/Admin-Activate-Rewind-Servlet",
+							"host": [
+								"{{Server}}"
+							],
+							"path": [
+								"Admin-Activate-Rewind-Servlet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeActivateRewind",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{Server}}/Admin-Deactivate-Rewind-Servlet",
+							"host": [
+								"{{Server}}"
+							],
+							"path": [
+								"Admin-Deactivate-Rewind-Servlet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RewindTime",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{Server}}/Admin-Rewind-Time-Servlet?TimeToMove=3",
+							"host": [
+								"{{Server}}"
+							],
+							"path": [
+								"Admin-Rewind-Time-Servlet"
+							],
+							"query": [
+								{
+									"key": "TimeToMove",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetServerInformation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Server}}/Admin-Pull-Information-Servlet",
+							"host": [
+								"{{Server}}"
+							],
+							"path": [
+								"Admin-Pull-Information-Servlet"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Common",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Server_Web/login?userName=gal&isAdmin=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Server_Web",
+								"login"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "gal"
+								},
+								{
+									"key": "isAdmin",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "BuySellLoansTab",
+					"item": [
+						{
+							"name": "GetLoansForSaleAndBuy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Server}}/Customer-BuySell-Pull-Servlet",
+									"host": [
+										"{{Server}}"
+									],
+									"path": [
+										"Customer-BuySell-Pull-Servlet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PutLoansToSale",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    \"Damn the banks\"\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Server}}/Customer-Sell-Loans-Servlet",
+									"host": [
+										"{{Server}}"
+									],
+									"path": [
+										"Customer-Sell-Loans-Servlet"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PaymentsTab",
+					"item": [
+						{
+							"name": "GetPaymentsInfoAndNotifications",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Server}}/Customer-Pull-Payments-Servlet",
+									"host": [
+										"{{Server}}"
+									],
+									"path": [
+										"Customer-Pull-Payments-Servlet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MakeActivePayment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{Server}}/Customer-Make-Active-Payment-Servlet?loanID=stock market introduction",
+									"host": [
+										"{{Server}}"
+									],
+									"path": [
+										"Customer-Make-Active-Payment-Servlet"
+									],
+									"query": [
+										{
+											"key": "loanID",
+											"value": "stock market introduction"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MakeRiskPayment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{Server}}/Customer-Make-Risk-Payment-Servlet?loanID=Bar Mitzva !&Amount=575",
+									"host": [
+										"{{Server}}"
+									],
+									"path": [
+										"Customer-Make-Risk-Payment-Servlet"
+									],
+									"query": [
+										{
+											"key": "loanID",
+											"value": "Bar Mitzva !"
+										},
+										{
+											"key": "Amount",
+											"value": "575"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CloseLoan",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{Server}}/Customer-Close-Loan-Servlet?loanID=Bar Mitzva !",
+									"host": [
+										"{{Server}}"
+									],
+									"path": [
+										"Customer-Close-Loan-Servlet"
+									],
+									"query": [
+										{
+											"key": "loanID",
+											"value": "Bar Mitzva !"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "InlayTab",
+					"item": [
+						{
+							"name": "FilterLoansForInlay",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    \"Setup a business\",\r\n    \"Happy Event\"\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Server}}/Customer-Inlay-Filter-Pull-Servlet?minYAZ&minInterest&maxOpenLoans",
+									"host": [
+										"{{Server}}"
+									],
+									"path": [
+										"Customer-Inlay-Filter-Pull-Servlet"
+									],
+									"query": [
+										{
+											"key": "minYAZ",
+											"value": null
+										},
+										{
+											"key": "minInterest",
+											"value": null
+										},
+										{
+											"key": "maxOpenLoans",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetCategories",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Server}}/Categories-Pull-Servlet",
+									"host": [
+										"{{Server}}"
+									],
+									"path": [
+										"Categories-Pull-Servlet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MakeInlay",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    \"Damn the banks\"\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Server}}/Check-Inlay-Input-Servlet?Amount=100&maxOwnership",
+									"host": [
+										"{{Server}}"
+									],
+									"path": [
+										"Check-Inlay-Input-Servlet"
+									],
+									"query": [
+										{
+											"key": "Amount",
+											"value": "100"
+										},
+										{
+											"key": "maxOwnership",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "InformationTab",
+					"item": [
+						{
+							"name": "Charge Money",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{Server}}/Customer-Charge-Money-Servlet?Amount=100",
+									"host": [
+										"{{Server}}"
+									],
+									"path": [
+										"Customer-Charge-Money-Servlet"
+									],
+									"query": [
+										{
+											"key": "Amount",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Withdraw Money",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{Server}}/Customer-Withdraw-Money-Servlet?Amount=100",
+									"host": [
+										"{{Server}}"
+									],
+									"path": [
+										"Customer-Withdraw-Money-Servlet"
+									],
+									"query": [
+										{
+											"key": "Amount",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetCustomerAndServerInformation",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Server}}/Customer-Pull-Information-Servlet",
+									"host": [
+										"{{Server}}"
+									],
+									"path": [
+										"Customer-Pull-Information-Servlet"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "CreateLoanTab",
+					"item": [
+						{
+							"name": "CreateNewLoan",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{Server}}/Create-Loan-Servlet?loanID=sony 5&category=Investment&timePerPayment=5&loanInterest=1&loanDuration=10&Amount=1500",
+									"host": [
+										"{{Server}}"
+									],
+									"path": [
+										"Create-Loan-Servlet"
+									],
+									"query": [
+										{
+											"key": "loanID",
+											"value": "sony 5"
+										},
+										{
+											"key": "category",
+											"value": "Investment"
+										},
+										{
+											"key": "timePerPayment",
+											"value": "5"
+										},
+										{
+											"key": "loanInterest",
+											"value": "1"
+										},
+										{
+											"key": "loanDuration",
+											"value": "10"
+										},
+										{
+											"key": "Amount",
+											"value": "1500"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetCategories",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Server}}/Categories-Pull-Servlet",
+									"host": [
+										"{{Server}}"
+									],
+									"path": [
+										"Categories-Pull-Servlet"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "UploadFile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/itay0/IdeaProjects/Alternative-Banking-System/Alternative banking system/engine/src/database/fileresource/exe3/ex3-small-1.xml"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Server}}/upload-file",
+							"host": [
+								"{{Server}}"
+							],
+							"path": [
+								"upload-file"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
