@@ -10,4 +10,5 @@ The code is divided into 6 different modules:
 4) Engine -> contains all the system information, including customers, loans, transactions and etc... also responsible for all the logic and actions in the system.
 5) JavaFX -> contains all the javaFx UI compontents of the admin and regular customers apps, including all the controllers of all the screens.
 6) Server -> contains all the servlets of the server,handles every http request coming from any user (either JavaFX or POSTMAN).
+
 The program also has another client, using POSTMAN, where you can use all the features of the program. The POSTMAN collection can be found next to the modules. 
