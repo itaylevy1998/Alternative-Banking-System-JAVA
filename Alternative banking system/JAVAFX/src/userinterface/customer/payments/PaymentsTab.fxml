@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane fx:id="paymentsTabAP" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.customer.payments.PaymentsTabController">
+   <children>
+      <TabPane fx:id="closeOrPaymentTabPane" prefHeight="400.0" prefWidth="414.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="186.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+            <Tab fx:id="makePaymentTab" text="Make payment">
+              <content>
+                <AnchorPane fx:id="makePaymentAP" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TabPane fx:id="makePaymentTabPane" prefHeight="289.0" prefWidth="414.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="83.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <tabs>
+                              <Tab fx:id="makePaymentActiveTab" text="Active">
+                                 <content>
+                                    <fx:include fx:id="makePaymentActiveTable" source="../../table/loantable/activeLoanTable.fxml" />
+                                 </content></Tab>
+                              <Tab fx:id="makePaymentRiskTab" text="Risk">
+                                 <content>
+                                    <fx:include fx:id="makePaymentRiskTable" source="../../table/loantable/riskLoanTable.fxml" />
+                                 </content></Tab>
+                           </tabs>
+                        </TabPane>
+                        <GridPane layoutX="4.0" layoutY="272.0" prefHeight="78.0" prefWidth="406.0" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="NEVER" minWidth="10.0" />
+                              <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="49.333343505859375" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="66.66665649414062" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Button fx:id="completePaymentButton" mnemonicParsing="false" onAction="#completePaymentOnAction" prefHeight="53.0" prefWidth="216.0" styleClass="action-buttons" text="Complete payment for selected loan" GridPane.rowIndex="1" />
+                              <Label fx:id="completePaymentError" prefHeight="54.0" prefWidth="191.0" styleClass="error-label" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="paymentAmountTextField" maxWidth="200.0" visible="false" GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <Label fx:id="paymentAmountLabel" prefHeight="20.0" prefWidth="207.0" styleClass="message-label" text="Please select payment amount:" visible="false">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+          <Tab fx:id="closeLoanTab" text="Close loan">
+               <content>
+                  <AnchorPane fx:id="closeLoanAP">
+                     <children>
+                        <TabPane fx:id="closeLoanTabPane" layoutY="-1.0" prefHeight="289.0" prefWidth="414.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="81.33333333333337" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <tabs>
+                            <Tab fx:id="closeLoanActiveTab" text="Active">
+                                 <content>
+                                    <fx:include fx:id="closeLoanActiveTable" source="../../table/loantable/activeLoanTable.fxml" />
+                                 </content>
+                              </Tab>
+                            <Tab fx:id="closeLoanRiskTab" text="Risk">
+                                 <content>
+                                    <fx:include fx:id="closeLoanRiskTable" source="../../table/loantable/riskLoanTable.fxml" />
+                                 </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                        <HBox fx:id="closeButtonAndErrorHB" layoutX="9.0" layoutY="303.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="53.0" prefWidth="414.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Button fx:id="closeLoanButton" mnemonicParsing="false" onAction="#closeLoanOnAction" prefHeight="53.0" prefWidth="210.0" styleClass="action-buttons" text="Close selected loan" />
+                              <Label fx:id="closeLoanError" prefHeight="54.0" prefWidth="191.0" styleClass="error-label" textFill="RED" />
+                           </children>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <AnchorPane fx:id="notificationsAP" layoutX="417.0" layoutY="1.0" prefHeight="400.0" prefWidth="187.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="notificationsTitle" layoutX="41.0" layoutY="14.0" styleClass="message-label" text="Payments notifications" />
+            <TableView fx:id="notificationsTableView" layoutX="27.0" layoutY="41.0" prefHeight="277.0" prefWidth="186.0" AnchorPane.bottomAnchor="82.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
+               <columns>
+                  <TableColumn fx:id="loanIDNotification" prefWidth="75.0" text="Loan ID" />
+                  <TableColumn fx:id="YAZNotification" prefWidth="75.0" text="YAZ" />
+                  <TableColumn fx:id="SumNotification" prefWidth="75.0" text="Sum" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <HBox layoutX="14.0" layoutY="326.0" prefHeight="84.0" prefWidth="187.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <fx:include fx:id="finishImage" source="finishImageAnimation.fxml" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

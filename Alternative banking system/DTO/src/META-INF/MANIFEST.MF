@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: userinterface.UserMain
+Class-Path: DTO.jar
+

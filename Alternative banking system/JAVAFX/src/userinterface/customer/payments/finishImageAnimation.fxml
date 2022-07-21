@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="finishImageAP" visible="false" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.customer.payments.FinishAnimationController">
+   <children>
+      <ImageView fx:id="finishImage" fitHeight="74.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@finished-label-round-band-sign-stamp-171559531.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

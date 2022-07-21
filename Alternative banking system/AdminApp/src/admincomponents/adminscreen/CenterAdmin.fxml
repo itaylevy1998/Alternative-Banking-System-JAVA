@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane fx:id="AdminAP" maxHeight="2500.0" maxWidth="2500.0" minHeight="300.0" minWidth="300.0" prefHeight="400.0" prefWidth="600.0" styleClass="center-background-only" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.admin.centerAdmin.CenterAdminController">
+   <children>
+      <HBox layoutX="14.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="center-background-only" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Button fx:id="IncreaseYazBUTTON" minWidth="50.0" mnemonicParsing="false" onAction="#increaseYazOnAction" prefHeight="34.0" prefWidth="111.0" styleClass="center-top-button" text="Increase Yaz" />
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="center-background-only" HBox.hgrow="ALWAYS" />
+            <Button fx:id="LoadFileBUTTON" minWidth="50.0" mnemonicParsing="false" onAction="#openFileChooser" prefHeight="34.0" prefWidth="111.0" styleClass="center-top-button" text="Load File" />
+         </children>
+         <padding>
+            <Insets left="30.0" right="30.0" />
+         </padding>
+      </HBox>
+      <VBox layoutY="34.0" prefHeight="206.0" prefWidth="600.0" styleClass="center-background-only" AnchorPane.bottomAnchor="160.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="34.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="21.0" prefWidth="600.0" styleClass="center-background-only">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <children>
+                  <Label id="loans-label" prefHeight="20.0" prefWidth="134.0" text="Loans Inforamtion" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="164.0" prefWidth="600.0" styleClass="center-loan-tabpane" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+              <tabs>
+                <Tab styleClass="center-loan-tab" text="New">
+                     <content>
+                        <fx:include fx:id="newLoan" maxWidth="1.7976931348623157E308" source="../../table/loantable/newLoanTable.fxml" />
+                     </content>
+                </Tab>
+                <Tab styleClass="center-loan-tab" text="Pending">
+                     <content>
+                        <fx:include fx:id="pendingLoan" source="../../table/loantable/pendingLoanTable.fxml" />
+                     </content>
+                  </Tab>
+                  <Tab styleClass="center-loan-tab" text="Active">
+                     <content>
+                        <fx:include fx:id="activeLoan" source="../../table/loantable/activeLoanTable.fxml" />
+                     </content>
+                  </Tab>
+                  <Tab styleClass="center-loan-tab" text="Risk">
+                     <content>
+                        <fx:include fx:id="riskLoan" source="../../table/loantable/riskLoanTable.fxml" />
+                     </content>
+                  </Tab>
+                  <Tab styleClass="center-loan-tab" text="Finished">
+                     <content>
+                        <fx:include fx:id="finishedLoan" source="../../table/loantable/finishedLoanTable.fxml" />
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+            <HBox prefHeight="21.0" prefWidth="214.0" styleClass="center-background-only">
+               <children>
+                  <Label id="customers-label" prefHeight="17.0" prefWidth="599.0" text="Customers Information" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+      <fx:include fx:id="customerTable" layoutY="238.0" source="../../table/customerTable/customerTable.fxml" AnchorPane.bottomAnchor="-0.6666666666666572" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+   </children>
+</AnchorPane>

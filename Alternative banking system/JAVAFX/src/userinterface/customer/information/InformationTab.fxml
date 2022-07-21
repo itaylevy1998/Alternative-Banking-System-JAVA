@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="informationAP" prefHeight="498.0" prefWidth="786.0" styleClass="background-only" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.customer.information.InformationTabController">
+   <children>
+      <VBox id="information-vbox" styleClass="background-only" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="247.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox id="balance-hbox" alignment="BOTTOM_LEFT" prefHeight="23.0" prefWidth="200.0" styleClass="background-only">
+               <children>
+                  <Label id="balance-label" fx:id="balanceLabel" prefHeight="17.0" prefWidth="106.0" text="Balance:" HBox.hgrow="ALWAYS" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox id="loans-hbox" prefHeight="23.0" prefWidth="539.0" styleClass="background-only">
+               <children>
+                  <Label id="loans-label" prefHeight="25.0" prefWidth="106.0" text="Loans Table" HBox.hgrow="ALWAYS" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <TabPane fx:id="loanerTP" prefHeight="243.0" prefWidth="539.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="newLoanerTab" text="New">
+                     <content>
+                        <fx:include fx:id="newLoanerTable" source="../../table/loantable/newLoanTable.fxml" />
+                     </content>
+                </Tab>
+                <Tab fx:id="pendingLoanerTab" text="Pending">
+                     <content>
+                        <fx:include fx:id="pendingLoanerTable" source="../../table/loantable/pendingLoanTable.fxml" />
+                     </content>
+                </Tab>
+                  <Tab fx:id="activeLoanerTab" text="Active">
+                     <content>
+                        <fx:include fx:id="activeLoanerTable" source="../../table/loantable/activeLoanTable.fxml" />
+                     </content>
+                  </Tab>
+                  <Tab fx:id="riskLoanerTab" text="Risk">
+                     <content>
+                        <fx:include fx:id="riskLoanerTable" source="../../table/loantable/riskLoanTable.fxml" />
+                     </content>
+                  </Tab>
+                  <Tab fx:id="finishedLoanerTab" text="Finished">
+                     <content>
+                        <fx:include fx:id="finishedLoanerTable" source="../../table/loantable/finishedLoanTable.fxml" />
+                     </content>
+                  </Tab>
+              </tabs>
+               <padding>
+                  <Insets right="2.0" />
+               </padding>
+            </TabPane>
+            <HBox id="lending-hbox" prefHeight="23.0" prefWidth="539.0" styleClass="background-only">
+               <children>
+                  <Label id="lending-label" prefHeight="27.0" prefWidth="106.0" text="Lending Tables" HBox.hgrow="ALWAYS" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <TabPane fx:id="lenderTP" prefHeight="188.0" prefWidth="418.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+              <tabs>
+                <Tab fx:id="pendingLenderTab" text="Pending">
+                     <content>
+                        <fx:include fx:id="pendingLenderTable" source="../../table/loantable/pendingLoanTable.fxml" />
+                     </content>
+                </Tab>
+                  <Tab fx:id="activeLenderTab" text="Active">
+                     <content>
+                        <fx:include fx:id="activeLenderTable" source="../../table/loantable/activeLoanTable.fxml" />
+                     </content>
+                  </Tab>
+                  <Tab fx:id="riskLenderTab" text="Risk">
+                     <content>
+                        <fx:include fx:id="riskLenderTable" source="../../table/loantable/riskLoanTable.fxml" />
+                     </content>
+                  </Tab>
+                  <Tab fx:id="finishedLenderTab" text="Finished">
+                     <content>
+                        <fx:include fx:id="finishedLenderTable" source="../../table/loantable/finishedLoanTable.fxml" />
+                     </content>
+                  </Tab>
+              </tabs>
+               <padding>
+                  <Insets right="2.0" />
+               </padding>
+            </TabPane>
+         </children>
+      </VBox>
+      <fx:include fx:id="transactionInfo" source="accountTransaction/accountTransactions.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+   </children>
+</AnchorPane>

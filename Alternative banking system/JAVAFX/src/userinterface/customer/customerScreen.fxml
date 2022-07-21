@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<ScrollPane fx:id="MainSP" fitToHeight="true" fitToWidth="true" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customercomponents.customerscreen.CustomerScreenController">
+   <content>
+      <BorderPane fx:id="MainBP" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" styleClass="background-only">
+         <top>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="600.0" prefHeight="49.0" prefWidth="600.0" spacing="18.0" styleClass="background-only" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="nameLabel" maxWidth="130.0" minWidth="-Infinity" prefHeight="35.0" prefWidth="90.0" styleClass="top-labels" text="Name: " HBox.hgrow="SOMETIMES">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Button fx:id="loadFileButton" maxWidth="125.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#LoadFileOnAction" prefHeight="35.0" prefWidth="91.0" text="Load File" HBox.hgrow="SOMETIMES" />
+                  <Label fx:id="YazLABEL" maxHeight="1.7976931348623157E308" maxWidth="125.0" minWidth="-Infinity" prefHeight="35.0" prefWidth="90.0" styleClass="top-labels" text="Current Yaz:" HBox.hgrow="SOMETIMES" />
+                  <Label fx:id="serverStatusLabel" maxWidth="185.0" minWidth="-Infinity" prefHeight="35.0" prefWidth="145.0" styleClass="top-labels" text="Server Status: " HBox.hgrow="SOMETIMES" />
+                  <ComboBox id="customers-combo-box" fx:id="ThemeCB" layoutX="20.0" layoutY="20.0" maxHeight="1.7976931348623157E308" maxWidth="125.0" minWidth="-Infinity" onAction="#SetThemeCBOnAction" prefHeight="35.0" prefWidth="85.0" promptText="Default" styleClass="top-combo-box" HBox.hgrow="SOMETIMES" />
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="60.0" />
+               </BorderPane.margin>
+               <padding>
+                  <Insets top="14.0" />
+               </padding>
+            </HBox>
+         </top>
+         <center>
+            <TabPane id="customer-options-tabpane" fx:id="customerOptionsTB" nodeOrientation="LEFT_TO_RIGHT" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="information" text="Information">
+                     <content>
+                        <fx:include fx:id="informationTab" source="information/InformationTab.fxml" />
+                     </content>
+                </Tab>
+                <Tab fx:id="inlay" text="Inlay">
+                     <content>
+                        <fx:include fx:id="inlayTab" source="inlay/inlayTab.fxml" />
+                     </content></Tab>
+                  <Tab fx:id="payments" text="Payments">
+                     <content>
+                        <fx:include fx:id="paymentsTab" source="payments/PaymentsTab.fxml" />
+                     </content></Tab>
+                  <Tab fx:id="createLoan" text="Create Loan">
+                     <content>
+                        <fx:include fx:id="createLoanTab" source="createloan/createLoan.fxml" />
+                     </content>
+                  </Tab>
+                  <Tab fx:id="buySellLoans" text="Buy/Sell Loans">
+                     <content>
+                        <fx:include fx:id="loanSellTab" source="loanforsell/loanforsell.fxml" />
+                     </content>
+                  </Tab>
+                  <Tab fx:id="chatRoom" text="Chat Room">
+                     <content>
+                        <fx:include fx:id="chatRoomTab" source="../chat/chatroom/chat-room-main.fxml" />
+                     </content>
+                  </Tab>
+              </tabs>
+               <BorderPane.margin>
+                  <Insets top="-50.0" />
+               </BorderPane.margin>
+            </TabPane>
+         </center>
+      </BorderPane>
+   </content>
+</ScrollPane>

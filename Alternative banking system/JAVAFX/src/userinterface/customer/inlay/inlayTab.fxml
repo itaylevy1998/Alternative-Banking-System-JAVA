@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import org.controlsfx.control.CheckComboBox?>
+
+<ScrollPane fx:id="inlaySP" fitToHeight="true" fitToWidth="true" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userinterface.customer.inlay.InlayTabController">
+   <content>
+      <AnchorPane fx:id="inlayAP" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="737.0" styleClass="background-only">
+         <children>
+            <GridPane fx:id="scrambleGP" layoutX="6.0" layoutY="14.0" prefHeight="236.0" prefWidth="719.0" styleClass="background-only" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="12.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="178.0" minWidth="10.0" prefWidth="165.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="240.0" minWidth="10.0" prefWidth="142.0" />
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="299.0" minWidth="10.0" prefWidth="78.0" />
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="299.0" minWidth="10.0" prefWidth="239.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <CheckBox fx:id="minInterestCB" mnemonicParsing="false" prefHeight="17.0" prefWidth="132.0" styleClass="message-label" text="Minimum Interest" GridPane.rowIndex="2" />
+                  <TextField fx:id="minInterestTF" disable="true" prefHeight="25.0" prefWidth="149.0" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label prefHeight="17.0" prefWidth="156.0" styleClass="message-label" text="Investment (mandatory!)" GridPane.halignment="LEFT" GridPane.valignment="CENTER" />
+                  <TextField fx:id="amountTF" prefHeight="25.0" prefWidth="173.0" styleClass="text-field" GridPane.columnIndex="1" />
+                  <CheckComboBox fx:id="categoriesCCB" maxWidth="250.0" prefHeight="25.0" prefWidth="197.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label styleClass="message-label" text="Categories (default = all)" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <CheckBox fx:id="minYazCB" mnemonicParsing="false" styleClass="message-label" text="Minimum YAZ" GridPane.rowIndex="3" />
+                  <TextField fx:id="minYazTF" disable="true" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <CheckBox fx:id="maxOpenLoansCB" mnemonicParsing="false" styleClass="message-label" text="Maximum open Loans" GridPane.rowIndex="4" />
+                  <CheckBox fx:id="maxOwnershipLoanCB" layoutX="10.0" layoutY="136.0" mnemonicParsing="false" styleClass="message-label" text="Maximum loan&#10;ownership" GridPane.rowIndex="5" />
+                  <TextField fx:id="maxOpenLoansTF" disable="true" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="maxOwnershipLoanTF" disable="true" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label fx:id="amountErrorLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="17.0" prefWidth="298.0" styleClass="error-label" textFill="#e40808" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="minInterestErrorLabel" prefHeight="17.0" prefWidth="299.0" styleClass="error-label" textFill="RED" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="minYazErrorLabel" prefHeight="17.0" prefWidth="298.0" styleClass="error-label" textFill="RED" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="maxOpenLoanErrorLabel" prefHeight="17.0" prefWidth="292.0" styleClass="error-label" textFill="RED" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="maxOwnershipLoanErrorLabel" prefHeight="17.0" prefWidth="298.0" styleClass="error-label" textFill="RED" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Button fx:id="confirmScrambleButton" mnemonicParsing="false" onAction="#confirmFilterOnAction" prefHeight="25.0" prefWidth="97.0" styleClass="action-buttons" text="Confirm" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <ProgressBar fx:id="progressBar" prefHeight="18.0" prefWidth="249.0" progress="0.0" visible="false" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+                  <Label id="progress-label" fx:id="progressPercent" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="6" />
+                  <Button fx:id="clearSelectionCategoryButton" mnemonicParsing="false" onAction="#clearSelectionCategoryOnAction" styleClass="action-buttons" text="Clear Selection" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+            </GridPane>
+            <GridPane fx:id="scrambleResultGP" layoutX="37.0" layoutY="261.0" prefHeight="396.0" prefWidth="895.0" styleClass="background-only" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="260.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="342.0" vgrow="ALWAYS" />
+                <RowConstraints fillHeight="false" maxHeight="201.0" minHeight="10.0" prefHeight="73.0" vgrow="NEVER" />
+              </rowConstraints>
+               <children>
+                  <TabPane fx:id="inlayResultTP" prefHeight="302.0" prefWidth="737.0" tabClosingPolicy="UNAVAILABLE" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                    <tabs>
+                      <Tab fx:id="inlayResultNewTab" text="New">
+                           <content>
+                              <fx:include fx:id="newLoanTB" source="../../table/loantable/newLoanTable.fxml" />
+                           </content>
+                      </Tab>
+                      <Tab fx:id="inlayResultPendingTab" text="Pending">
+                           <content>
+                              <fx:include fx:id="pendingLoanTB" source="../../table/loantable/pendingLoanTable.fxml" />
+                           </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+                  <Button fx:id="confirmSelectionButton" maxWidth="-Infinity" mnemonicParsing="false" onAction="#confirmInlayOnAction" styleClass="action-buttons" text="Confirm Selection" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>
