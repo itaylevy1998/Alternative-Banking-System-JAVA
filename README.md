@@ -1,8 +1,8 @@
 # Alternative-Banking-System-JAVA
  
-This is a java project of an alternative banking system, which allow clients to borrow and lend money from each other.
-This is a client-server app, with a server based on TOMCAT servers. 
-The program allow 1 admin and multiple cilents to be logged in to the system in every given moment.
+This is a java project of an alternative banking system, which allow clients to borrow and lend money to each other.
+This is a client-server app, with a server based on TOMCAT. 
+The program allows 1 admin and multiple cilents to be logged in to the system in every given moment.
 The code is divided into 6 different modules:
 1) AdminApp -> contains all the code relevant to the admin.
 2) CustomerApp -> contatins all the code relevant to a regular customer.
